@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HastaKayıtAl Sayfası</title>
+</head>
+<body>
+
+<style>
+    body {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Lucida Handwriting';}
+
+        .centered-form {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;}
+
+        .centered-button {
+            margin-top: 10px;}
+</style>
+ <style>
+        body, html {
+            height: 100%;
+            margin: 0;}
+
+        .fullscreen-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 150%;
+            height: 100%;
+            z-index: -1;}
+
+        .fullscreen-bg-img {
+            width: 100%;
+            height: 100%;
+            object-fit: scale-down;}
+        .genis-dugme {
+         width: 180px; }
+        .hizalama{
+        display: flex;
+        margin-left: 3cm }
+        .smaller-font {
+         font-size: 15px;
+         color:black;}
+        .offset-line {
+        margin-left:3cm;}
+    </style>
+<div class="fullscreen-bg">
+        <img src="https://cdn.pixabay.com/photo/2016/05/30/14/23/detective-1424831_1280.png" class="fullscreen-bg-img">
+    </div>
+<form action ="{{ url_for('RandevuSonuc')}}" method="post">
+<h1 class="hizalama"> Hasta Randevu Bilgi Alımı</h1>
+    <hr class="offset-line">
+    <p class="offset-line"> Randevu alınacak hastanın bilgilerini giriniz.<br> Yanlış girilen bilgilerden hasta sorumlu olacaktır.</p>
+    <label class="smaller-font"style="margin-left: 3cm;"  for="hasta_adı">Adınız:</label>
+    <input  style="font-family: Lucida Handwriting" class="hizalama " type="text" id="hasta_adı" name="hasta_adı">
+
+     <label class="smaller-font" style="margin-left: 3cm" for="hasta_soyadı">Soyadınız:</label>
+    <input  style="font-family: Lucida Handwriting" class="hizalama" type="text" id="hasta_soyadı" name="hasta_soyadı">
+
+    <label class="smaller-font"style="margin-left: 3cm" for="adres">Adresiniz:</label>
+    <input  style="font-family: Lucida Handwriting" class="hizalama" type="text" id="adres" name="adres">
+
+    <label  class="smaller-font"style="margin-left: 3cm" for="tckimlik"> Kimlik Numaranız:</label>
+    <input  style="font-family: Lucida Handwriting" class="hizalama" type="number" id="tckimlik" name="tckimlik">
+    <label  class="smaller-font"style="margin-left: 3cm" for="telefon">Telefon Numaranız:</label>
+    <input  style="font-family: Lucida Handwriting" class="hizalama" type="number" id="telefon" name="telefon">
+
+    <label class="smaller-font"style="margin-left: 3cm"  for="yasınız">Yaşınız:</label>
+    <input style="font-family: Lucida Handwriting" class="hizalama" type="number" id="yasınız" name="yasınız"><br>
+
+    <input class="genis-dugme hizalama "
+           style="margin-left: 3cm ;font-family: Lucida Handwriting ;font-size: 15px;" type="submit" value="Bilgileri Göster" ">
+</form>
+</body>
+</html>
