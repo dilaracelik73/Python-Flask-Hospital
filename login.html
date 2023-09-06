@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Sayfası</title>
+</head>
+<body>
+<style>
+    body {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Lucida Handwriting';}
+
+        .centered-form {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;}
+
+        .centered-button {
+            margin-top: 10px;}
+</style>
+ <style>
+        body, html {
+            height: 100%;
+            margin: 0;}
+
+        .fullscreen-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;}
+
+        .fullscreen-bg-img {
+            width: 150%;
+            height: 100%;
+            object-fit: contain;}
+        .indent
+        { padding-left: 5cm; }
+    </style>
+<div class="fullscreen-bg">
+        <img src="https://cdn.pixabay.com/photo/2017/10/29/14/02/portrait-2899779_1280.png " alt="Full-Screen Background Image"
+             class="fullscreen-bg-img">
+    </div>
+<form action="" method="post">
+    <h1 class="indent"> Central Health Clinic</h1>
+    <p class="indent">  Randevu Almak İstenen Bölümü Giriniz:  </p>
+    <p> <input type= "text" name="hasta_bolum" style="margin-left: 5cm; font-family: Lucida Handwriting""  /></p>
+    <p> <input type= "submit" value="Sayfaya Git" style="margin-left: 5cm; font-family: Lucida Handwriting"" /> </p><br>
+    <p class="indent"> Randevu Alabileceğiniz Bölüm İsimleri: </p>
+    <ul class="indent" style="circle">
+        <li> Ağız, Çene ve Diş Sağlığı</li>
+        <li> Beslenme ve Diyet</li>
+        <li> Çocuk Hastalıkları</li>
+        <li> Plastik Cerrahi</li>
+        <li> Göz Hastalıkları</li>
+        <li> Kardiyoloji</li>
+        <li> Nöroloji</li>
+        <li> Psikoloji</li>
+    </ul>
+
+
+</form>
+</body>
+</html>
