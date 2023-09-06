@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Randevu Sonuc Sayfası</title>
+</head>
+<body>
+   <style>
+         body {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Lucida Handwriting';}
+
+        .centered-form {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;}
+
+        .centered-button {
+            margin-top: 10px;}
+    </style>
+    <style>
+        body, html {
+            height: 105%;
+            margin: 0;}
+
+        .fullscreen-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 140%;
+            height: 90%;
+            z-index: -1;}
+
+        .fullscreen-bg-img {
+            width: 110%;
+            height: 80%;
+            object-fit:scale-down;}
+        .genis-dugme { width: 180px; }
+
+        .hizalama{margin-left: 2cm}
+
+        .smaller-font {font-size: 15px;}
+        .offset-line {margin-left:2cm;}
+        .color_red{color:red;}
+    </style>
+<div class="fullscreen-bg">
+        <img src="https://cdn.pixabay.com/photo/2016/06/13/15/07/presentation-1454403_1280.png"
+             alt="Full-Screen Background Image" class="fullscreen-bg-img">
+    </div>
+<form action ="{{ url_for('Login')}}" method="post">
+ <h1 class="hizalama"> Hastane Randevu Bildirim Sistemi</h1>
+    <h3 class="hizalama" style="text-align:center"> Sayın ; {{hasta_adı.title() }} {{hasta_soyadı.title()}} </h3>
+    <hr class="offset-line" >
+    <p class="smaller-font hizalama">Girilen bilgiler doğrultusunda randevunuz <span class="color_red"> oluşturulmuştur. </span><br>
+        Yanlış girilen bilgilerden <span class="color_red">hasta sorumlu olacaktır.</span><br> Randevuya gelirken
+        <span class="color_red">kimlik kartınızı</span> unutmayınız.
+    <br>Randevu zamanınından  <span class="color_red"> en az 15 dk önce muayene salonunun önünde </span> olunuz.</p>
+    <hr class="offset-line" >
+    <p class="smaller-font hizalama"> <b><u>Hastanın Adı ve Soyadı :  </u></b>{{hasta_adı.upper() }} {{hasta_soyadı.upper()}}</p>
+    <p class="smaller-font hizalama"> <b><u>Hastanın Yaşı :   </u></b>{{ yasınız }} (Durum: {{ yas_durum }})</p>
+    <p class="smaller-font hizalama"> <b><u>Hastanın Adresi :  </u></b> {{adres.upper()}}</p>
+    <p class="smaller-font hizalama"> <b><u>Hastanın Kimlik Numarası :  </u></b>{{tckimlik}}</p>
+    <p class="smaller-font hizalama"> <b><u>Hastanın Telefon Numarası :  </u></b> {{telefon}}</p>
+    <p class="smaller-font hizalama"> <b><u>Hastanın Muayene Salonu ve Saati :  </u></b> {{hasta_durum.upper()}}</p>
+    <p class="smaller-font hizalama"> <b><u>Hastanın Muayene Olacağı Bölüm Adı :  </u></b> {{hasta_bolum.upper()}}</p>
+
+</form>
+</body>
+</html>
